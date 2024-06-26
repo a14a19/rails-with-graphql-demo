@@ -35,6 +35,9 @@ gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# password hashing
+# gem 'bcrypt'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -59,3 +62,5 @@ group :development do
   gem "faker"
 end
 
+
+gem "devise", "~> 4.9"
