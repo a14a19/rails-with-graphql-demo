@@ -7,7 +7,8 @@ module Types
     field :users, [Types::UserType], null: false 
     # ruby query
     def users
-      User.all # coming from models > User, these are active records of ruby on rails, coming from a gem, it replaces database queries like select * from user;
+      Resolvers::UserResolver.all_users
+      # User.all # coming from models > User, these are active records of ruby on rails, coming from a gem, it replaces database queries like select * from user;
     end
 
     # graphql query
@@ -35,6 +36,8 @@ module Types
     def post(id:)
       Post.find(id)
     end
+
+    # for devices
 
     # field :node, Types::NodeType, null: true, description: "Fetches an object given its ID." do
     #   argument :id, ID, required: true, description: "ID of the object."
