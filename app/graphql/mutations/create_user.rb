@@ -13,7 +13,7 @@ class Mutations::CreateUser < Mutations::BaseMutation
       posts.each do |post_attributes|
         user.posts.build(post_attributes.to_h)
       end
-
+      
         if user.save
         {
              user: user,

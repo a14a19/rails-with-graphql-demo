@@ -5,5 +5,6 @@ class User < ApplicationRecord
     has_many :posts
     has_many :user_device_mappings
     has_many :devices, through: :user_device_mappings
+
     # has_secure_password # for password_digest
 end
