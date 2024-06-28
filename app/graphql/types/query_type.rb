@@ -4,7 +4,7 @@ module Types
   class QueryType < Types::BaseObject
     # /users
     # graphql query
-    field :users, [Types::UserType], null: false 
+    field :users, [Types::UserType], null: false, description: "Fetch all users"
     # ruby query
     def users
       Resolvers::UserResolver.all_users
