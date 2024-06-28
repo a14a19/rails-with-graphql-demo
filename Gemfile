@@ -64,3 +64,4 @@ end
 
 
 gem "devise", "~> 4.9"
+gem "devise-jwt", "~> 0.11.0"

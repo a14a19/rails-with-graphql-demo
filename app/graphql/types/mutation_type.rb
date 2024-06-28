@@ -3,14 +3,18 @@
 module Types
   class MutationType < Types::BaseObject
     # user
-    field :create_user, mutation: Mutations::CreateUser
+    field :createUser, mutation: Mutations::CreateUser
     field :edit_user, mutation: Mutations::EditUser
-    field :delete_user, mutation: Mutations::DeleteUser
+    field :deleteUser, mutation: Mutations::DeleteUser
 
     # post
     field :create_post, mutation: Mutations::CreatePost
 
-    # device
+    # device 
+    field :create_device, mutation: Mutations::CreateDevice
+
+    #user_device_mapping
+    field :create_user_device_mapping, mutation: Mutations::CreateUserDeviceMapping
   end
 end
 
