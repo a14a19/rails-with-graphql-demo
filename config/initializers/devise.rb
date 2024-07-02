@@ -322,4 +322,6 @@ Devise.setup do |config|
   config.warden do |manager|
     manager.failure_app = CustomFailureApp
   end
+
+  config.navigational_formats = [:json]
 end
