@@ -17,6 +17,9 @@ gem 'graphql', '~> 2.0'
 # for postgress
 gem "pg", ">= 0.18", "< 2.0"
 
+# cors
+gem 'rack-cors'
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 

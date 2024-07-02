@@ -1,20 +1,15 @@
 Rails.application.routes.draw do
-  # devise_for :users
-
   namespace :api do
     namespace :v1 do
-      devise_for 'User', at: 'auth', controllers: {
-        registrations: 'users/registrations_controller'
+      devise_for :users, path: 'auth', controllers: {
+        sessions: 'api/v1/users/sessions',
+        # registrations: 'api/v1/registrations'
       }
+      post "/graphql", to: "graphql#execute"
+      if Rails.env.development?
+        mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: "graphql#execute"
+      end
     end
-  end
-
-  post "/graphql", to: "graphql#execute"
-
-  if Rails.env.development?
-    mount GraphiQL::Rails::Engine, at: '/graphiql', graphql_path: "graphql#execute"
-    # authenticate :user do
-    # end
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
